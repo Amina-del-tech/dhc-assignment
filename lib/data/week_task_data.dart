@@ -16,6 +16,7 @@ class WeekTaskData {
       "title": "Signup Screen",
       "description": "Build a signup screen with proper form validation. Include fields for name, email, and password. Ensure validations for email format and non-empty fields. Add a signup button and navigate to Home Screen on success.",
       "screen": const SignupScreen(),
+      
     },
   ];
 
