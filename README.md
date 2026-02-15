@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 dhc-assignment-1
 A fully responsive Flutter application showcasing modern UI/UX, authentication screens,  navigation, and reusable widgets. Built with clean architecture and optimized layout  to work smoothly across different screen sizes.
 # My Flutter Journey 🚀
@@ -52,21 +51,3 @@ This project was created for learning Flutter development, improving UI design s
 👩‍💻 Author
 
 Amina Fiaz 
-=======
-# my_flutter_journey
-
-A new Flutter project.
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
->>>>>>> 88f9312 (Project uploaded on github)
