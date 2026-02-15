@@ -39,6 +39,7 @@ This project demonstrates modern UI design, responsive layout, navigation, and b
 - Responsive Layout  
 
 📂 Project Structure
+
 lib/
  ├── screens/
  ├── widgets/
