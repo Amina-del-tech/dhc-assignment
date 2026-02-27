@@ -47,8 +47,9 @@ lib/
  ├── utils/
  └── main.dart
 
-  🎯 Purpose
-This project was created for learning Flutter development, improving UI design skills, and understanding app structure with clean code
+ 🎯 Purpose
+  
+- This project was created for learning Flutter development, improving UI design skills, and understanding app structure with clean code
 
 👩‍💻 Author
 
