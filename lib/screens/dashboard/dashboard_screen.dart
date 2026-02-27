@@ -4,6 +4,7 @@ import 'package:my_flutter_journey/screens/widgets/week_card.dart';
 import 'package:my_flutter_journey/screens/widgets/week_screens_list_dart';
 import 'package:my_flutter_journey/utils/app_colors.dart';
 
+
 class DashboardScreen extends StatelessWidget {
   const DashboardScreen({super.key});
 
@@ -69,7 +70,7 @@ class DashboardScreen extends StatelessWidget {
                   "Built full Task Manager with add/delete/complete functionality and persistence using SharedPreferences. Students learned to combine all previous concepts into a complete project.",
               icon: Icons.looks_3,
               gradientColors: AppColors.week3Gradient,
-              margin: const EdgeInsets.only(bottom: 0),
+              margin: const EdgeInsets.only(bottom: 12),
               onTap: () => Navigator.push(
                 context,
                 MaterialPageRoute(
@@ -78,6 +79,26 @@ class DashboardScreen extends StatelessWidget {
                     weekDescription:
                         "Built full Task Manager with add/delete/complete functionality and persistence using SharedPreferences. Students learned to combine all previous concepts into a complete project.",
                     screens: WeekTaskData.week3Screens,
+                  ),
+                ),
+              ),
+            ),
+            WeekCard(
+              title: "Week 4",
+              subtitle:
+                  "Implemented REST API integration using http package. Learned JSON parsing, FutureBuilder, loading indicators, and error handling.",
+              icon: Icons.looks_4,
+              gradientColors:
+                  AppColors.week4Gradient, // create this in app_colors
+              margin: const EdgeInsets.only(bottom: 12),
+              onTap: () => Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (_) => WeekScreensList(
+                    weekTitle: "Week 4",
+                    weekDescription:
+                        "Implemented REST API integration using http package. Learned JSON parsing, loading states, and error handling.",
+                    screens: WeekTaskData.week4Screens,
                   ),
                 ),
               ),

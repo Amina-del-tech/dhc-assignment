@@ -8,6 +8,7 @@ environment:
   sdk: ^3.10.7
 
 dependencies:
+ 
   flutter:
     sdk: flutter
 
@@ -16,7 +17,7 @@ dependencies:
 
   # Cupertino icons for iOS
   cupertino_icons: ^1.0.8
-
+  http: ^1.6.0
 dev_dependencies:
   flutter_test:
     sdk: flutter

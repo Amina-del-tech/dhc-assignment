@@ -4,6 +4,9 @@ import 'package:my_flutter_journey/screens/week1/signup_screen.dart';
 import 'package:my_flutter_journey/screens/week2/counter_app_screen.dart';
 import 'package:my_flutter_journey/screens/week2/todo_app_screen.dart';
 import 'package:my_flutter_journey/screens/week3/task_manager_screen.dart';
+import 'package:my_flutter_journey/week4/user_list_screen.dart';
+
+
 
 class WeekTaskData {
   static List<Map<String, dynamic>> week1Screens = [
@@ -38,6 +41,15 @@ class WeekTaskData {
       "title": "Task Manager",
       "description": "Final project: Create a functional task management app. Features include adding, deleting, and marking tasks as complete. Persist tasks locally using SharedPreferences. Test navigation and data saving. Include a custom app bar with action button for adding tasks and use Icons for visual appeal.",
       "screen": const TaskManagerScreen(),
+    },
+  ];
+
+   static List<Map<String, dynamic>> week4Screens = [
+    {
+      "title": "Users List & Profile",
+      "description":
+          "Fetch a list of users from JSONPlaceholder API. Display all users in a scrollable list. Tap on any user to view their detailed profile. Navigate between users using Previous/Next buttons.",
+      "screen": const UserListScreen(),
     },
   ];
 }

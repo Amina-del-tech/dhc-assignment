@@ -23,6 +23,7 @@ class AppColors {
   static const List<Color> week1Gradient = [Color(0xFF6FB1FC), Color(0xFF4364F7)];
   static const List<Color> week2Gradient = [Color(0xFFFF758C), Color(0xFFFF7EB3)];
   static const List<Color> week3Gradient = [Color(0xFF43CEA2), Color(0xFF185A9D)];
+  static const List<Color> week4Gradient = [Color(0xFFFFB75E), Color(0xFFED8F03)];
   
 
   // Divider / Border
