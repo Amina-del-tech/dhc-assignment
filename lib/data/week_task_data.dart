@@ -1,10 +1,11 @@
-import 'package:my_flutter_journey/screens/week1/home_screen.dart';
+
 import 'package:my_flutter_journey/screens/week1/login_screen.dart';
 import 'package:my_flutter_journey/screens/week1/signup_screen.dart';
 import 'package:my_flutter_journey/screens/week2/counter_app_screen.dart';
 import 'package:my_flutter_journey/screens/week2/todo_app_screen.dart';
 import 'package:my_flutter_journey/screens/week3/task_manager_screen.dart';
 import 'package:my_flutter_journey/week4/user_list_screen.dart';
+import 'package:my_flutter_journey/week5/profile_screen.dart';
 
 
 
@@ -71,7 +72,7 @@ class WeekTaskData {
     "title": "User Profile Screen",
     "description":
         "After login/signup, display the user profile with data fetched from Firestore. Show user's name and email. Provide a logout button to sign out from Firebase Authentication.",
-    "screen": HomeScreen(),
+    "screen":ProfileScreen(),
   },
 ];
 }

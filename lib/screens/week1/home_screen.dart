@@ -11,7 +11,7 @@ class HomeScreen extends StatelessWidget {
     User? user = FirebaseAuth.instance.currentUser;
 
     if (user == null) {
-      // Agar user somehow null hai
+      
       return Scaffold(
         body: Center(
           child: Text(

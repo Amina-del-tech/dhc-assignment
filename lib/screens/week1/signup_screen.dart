@@ -18,6 +18,7 @@ class _SignupScreenState extends State<SignupScreen> {
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
   TextEditingController confirmPasswordController = TextEditingController();
+  TextEditingController phoneController = TextEditingController();
   FirebaseAuth auth = FirebaseAuth.instance;
   bool loading = false;
 
@@ -26,25 +27,25 @@ class _SignupScreenState extends State<SignupScreen> {
       loading = true;
     });
     try {
-     UserCredential userCredential = await auth.createUserWithEmailAndPassword(
-  email: emailController.text,
-  password: passwordController.text,
-);
+      UserCredential userCredential = await auth.createUserWithEmailAndPassword(
+        email: emailController.text,
+        password: passwordController.text,
+      );
 
-await FirebaseFirestore.instance
-    .collection('users')
-    .doc(userCredential.user!.uid) // <- yeh sahi hai
-    .set({
-  'name': nameController.text.trim(),
-  'email': emailController.text.trim(),
-  'createdAt': FieldValue.serverTimestamp(),
-});
-     
+      await FirebaseFirestore.instance
+          .collection('users')
+          .doc(userCredential.user!.uid) // <- yeh sahi hai
+          .set({
+            'name': nameController.text.trim(),
+            'email': emailController.text.trim(),
+            'phone': phoneController.text.trim(),
+            'createdAt': FieldValue.serverTimestamp(),
+          });
+
       Navigator.pushReplacement(
         context,
         MaterialPageRoute(builder: (context) => const HomeScreen()),
       );
-    
 
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(
@@ -53,9 +54,9 @@ await FirebaseFirestore.instance
         ),
       );
     } on FirebaseAuthException catch (e) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text(e.message ?? "Signup failed")),
-      );
+      ScaffoldMessenger.of(
+        context,
+      ).showSnackBar(SnackBar(content: Text(e.message ?? "Signup failed")));
     } finally {
       setState(() {
         loading = false;
@@ -70,13 +71,13 @@ await FirebaseFirestore.instance
     return RegExp(r'^[^@]+@[^@]+\.[^@]+').hasMatch(email);
   }
 
- 
   @override
   void dispose() {
     nameController.dispose();
     emailController.dispose();
     passwordController.dispose();
     confirmPasswordController.dispose();
+    phoneController.dispose();
     super.dispose();
   }
 
@@ -204,6 +205,28 @@ await FirebaseFirestore.instance
                                         return null;
                                       },
                                     ),
+                                    const SizedBox(height: 15),
+                                    TextFormField(
+                                      controller: phoneController,
+                                      keyboardType: TextInputType.phone,
+                                      decoration: InputDecoration(
+                                        hintText: "Phone Number",
+                                        border: OutlineInputBorder(
+                                          borderRadius: BorderRadius.circular(
+                                            12,
+                                          ),
+                                        ),
+                                      ),
+                                      validator: (value) {
+                                        if (value == null || value.isEmpty) {
+                                          return "Phone number required";
+                                        }
+                                        if (value.length < 10) {
+                                          return "Enter valid phone number";
+                                        }
+                                        return null;
+                                      },
+                                    ),
 
                                     const SizedBox(height: 15),
                                     TextFormField(
@@ -283,7 +306,8 @@ await FirebaseFirestore.instance
                                         height: 45,
                                         child: TextButton(
                                           onPressed: () {
-                                            if (_formKey.currentState!.validate()){
+                                            if (_formKey.currentState!
+                                                .validate()) {
                                               signUpNow();
                                             }
                                           },
