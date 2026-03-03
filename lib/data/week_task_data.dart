@@ -1,10 +1,12 @@
-
+import 'package:my_flutter_journey/screens/week1/home_screen.dart';
 import 'package:my_flutter_journey/screens/week1/login_screen.dart';
 import 'package:my_flutter_journey/screens/week1/signup_screen.dart';
 import 'package:my_flutter_journey/screens/week2/counter_app_screen.dart';
 import 'package:my_flutter_journey/screens/week2/todo_app_screen.dart';
 import 'package:my_flutter_journey/screens/week3/task_manager_screen.dart';
 import 'package:my_flutter_journey/week4/user_list_screen.dart';
+
+
 
 
 
@@ -52,4 +54,24 @@ class WeekTaskData {
       "screen": const UserListScreen(),
     },
   ];
+  static List<Map<String, dynamic>> week5Screens = [
+  {
+    "title": "Firebase Login Screen",
+    "description":
+        "Build a login screen using Firebase Email/Password Authentication. Validate user input for email format and non-empty password. On successful login, navigate to the User Profile Screen. Handle error messages for invalid credentials.",
+    "screen": const LoginScreen(),
+  },
+  {
+    "title": "Firebase Signup Screen",
+    "description":
+        "Build a signup screen integrated with Firebase Authentication. Include fields for name, email, and password with proper validation. On successful signup, store user details (name & email) in Firestore and navigate to the User Profile Screen.",
+    "screen": const SignupScreen(),
+  },
+  {
+    "title": "User Profile Screen",
+    "description":
+        "After login/signup, display the user profile with data fetched from Firestore. Show user's name and email. Provide a logout button to sign out from Firebase Authentication.",
+    "screen": HomeScreen(),
+  },
+];
 }

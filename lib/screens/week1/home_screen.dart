@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:my_flutter_journey/utils/app_colors.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -6,6 +8,20 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    User? user = FirebaseAuth.instance.currentUser;
+
+    if (user == null) {
+      // Agar user somehow null hai
+      return Scaffold(
+        body: Center(
+          child: Text(
+            "User not logged in",
+            style: TextStyle(color: Colors.white, fontSize: 18),
+          ),
+        ),
+      );
+    }
+
     return Scaffold(
       appBar: AppBar(
         title: const Text(
@@ -16,8 +32,8 @@ class HomeScreen extends StatelessWidget {
             fontSize: 20,
           ),
         ),
+        iconTheme:IconThemeData(color: Colors.white),
         centerTitle: true,
-        iconTheme: const IconThemeData(color: Colors.white),
         backgroundColor: AppColors.week1Gradient[0],
       ),
       body: Container(
@@ -25,23 +41,52 @@ class HomeScreen extends StatelessWidget {
         height: double.infinity,
         decoration: const BoxDecoration(
           gradient: LinearGradient(
-            colors: [
-              Color(0xff6FB1FC),
-              Color(0xff4364F7),
-            ],
+            colors: [Color(0xff6FB1FC), Color(0xff4364F7)],
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
           ),
         ),
-        child: const Center(
-          child: Text(
-            "Welcome to Home Screen",
-            style: TextStyle(
-              fontSize: 24,
-              fontWeight: FontWeight.bold,
-              color: Colors.white,
-            ),
-          ),
+        child: StreamBuilder<DocumentSnapshot>(
+          stream: FirebaseFirestore.instance
+              .collection('users')
+              .doc(user.uid)
+              .snapshots(),
+          builder: (context, snapshot) {
+            if (snapshot.connectionState == ConnectionState.waiting) {
+              return const Center(
+                  child: CircularProgressIndicator(color: Colors.white));
+            }
+
+            if (!snapshot.hasData || !snapshot.data!.exists) {
+              return const Center(
+                  child: Text(
+                "No user data found",
+                style: TextStyle(color: Colors.white, fontSize: 18),
+              ));
+            }
+
+            var userData = snapshot.data!.data() as Map<String, dynamic>;
+
+            return Center(
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Text(
+                    "Welcome, ${userData['name'] ?? 'User'}!",
+                    style: const TextStyle(
+                        fontSize: 24,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white),
+                  ),
+                  const SizedBox(height: 10),
+                  Text(
+                    "${userData['email'] ?? ''}",
+                    style: const TextStyle(fontSize: 18, color: Colors.white70),
+                  ),
+                ],
+              ),
+            );
+          },
         ),
       ),
     );

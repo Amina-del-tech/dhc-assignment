@@ -11,14 +11,14 @@ dependencies:
  
   flutter:
     sdk: flutter
-
-  # State management / storage
   shared_preferences: ^2.5.4
 
   # Cupertino icons for iOS
   cupertino_icons: ^1.0.8
   http: ^1.6.0
   firebase_core: ^4.5.0
+  cloud_firestore: ^6.1.3
+  firebase_auth: ^6.2.0
 dev_dependencies:
   flutter_test:
     sdk: flutter

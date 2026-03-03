@@ -103,6 +103,26 @@ class DashboardScreen extends StatelessWidget {
                 ),
               ),
             ),
+            WeekCard(
+              title: "Week 5",
+              subtitle:
+                  "Implemented Firebase Authentication for user registration and login. Learned to integrate Firebase services into Flutter apps.",
+              icon: Icons.looks_5,
+              gradientColors:
+                  AppColors.week5Gradient, 
+              margin: const EdgeInsets.only(bottom: 12),
+              onTap: () => Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (_) => WeekScreensList(
+                    weekTitle: "Week 5",
+                    weekDescription:
+                        "Implemented Firebase Authentication for user registration and login. Learned to integrate Firebase services into Flutter apps.",
+                    screens: WeekTaskData.week5Screens,
+                  ),
+                ),
+              )
+            )
           ],
         ),
       ),
