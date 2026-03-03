@@ -78,6 +78,94 @@ Packages Used
 - http – For REST API requests.
 - flutter/material.dart – UI components.
 
+Week 5 – Profile Screen with Firebase
+Overview
+
+In Week 5, the focus was on implementing a Profile Screen in the Flutter application. This screen allows a logged-in user to view their personal information, including:
+
+- Profile Picture
+- Full Name
+- Email
+- Phone Number (from Firestore)
+
+The data is stored in Firebase Firestore and authentication is handled via Firebase Authentication. The UI is designed to be modern, clean, and responsive.
+
+🔹 Firebase Packages Used (Week 5)
+
+1. firebase_core
+
+- Purpose: Initializes Firebase in the Flutter app.
+- Version: ^2.25.0
+
+2. firebase_auth
+
+- Purpose: Handles user authentication (signup, login, logout).
+- Version: ^4.6.3
+
+3. cloud_firestore
+
+- Purpose: Stores and fetches user data (name, email, phone).
+- Version: ^5.3.0
+
+🔹 Setup Instructions
+
+- Add the packages to pubspec.yaml and run:
+- flutter pub get
+- Initialize Firebase in main.dart before running the app:
+
+import 'package:firebase_core/firebase_core.dart';
+
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
+  runApp(MyApp());
+}
+These packages allow secure authentication and real-time access to user data in Firestore for the profile screen.
+
+Purpose
+
+- The purpose of Week 5 is to:
+- Learn how to fetch user data from Firebase Firestore.
+- Display user information in a visually appealing UI.
+- Handle user authentication and logout flow.
+- Apply responsive design principles in Flutter.
+- Understand modular code structure and FutureBuilder usage for async data fetching.
+
+Features
+
+- Fetch user data from Firebase Firestore in real-time.
+- Display user profile details: Name, Email, Phone.
+- Default avatar is displayed if the user does not have a profile picture.
+- Gradient header with circular avatar for a modern UI.
+- Account info displayed in cards for readability.
+- Logout button with small, clean design.
+- Scrollable layout for smaller screens.
+- Handles cases where no data exists or the user is not logged in.
+
+ UI Flow
+User Registration (Signup Screen)
+        │
+        ▼
+  Firebase Authentication
+        │
+        ▼
+  Firestore "users" Collection
+(Name, Email, Phone stored)
+        │
+        ▼
+  Profile Screen (Week 5)
+  ├─ Header with gradient & avatar
+  ├─ Name & Email displayed
+  ├─ Info cards: Name, Email, Phone
+  └─ Logout button
+
+Explanation:
+
+- After signup/login, user data is stored in Firestore.
+- Profile Screen fetches data asynchronously using FutureBuilder.
+- UI updates automatically when user data is available.
+
+
 📂 Project Structure
 
 lib/
