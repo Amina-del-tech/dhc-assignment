@@ -197,22 +197,15 @@ class _TodoScreenState extends State<TodoScreen> {
         title: const Text("To-Do List"),
         centerTitle: true,
         elevation: 6,
+        backgroundColor: AppColors.primary,
         titleTextStyle: const TextStyle(
           fontWeight: FontWeight.bold,
           fontSize: 24,
           color: Colors.white,
         ),
         iconTheme: const IconThemeData(color: Colors.white),
-        flexibleSpace: Container(
-          decoration: BoxDecoration(
-            gradient: LinearGradient(
-              colors: AppColors.week2Gradient,
-              begin: Alignment.topLeft,
-              end: Alignment.bottomRight,
-            ),
-          ),
-        ),
       ),
+        
       body: tasks.isEmpty
           ? Center(
               child: Column(

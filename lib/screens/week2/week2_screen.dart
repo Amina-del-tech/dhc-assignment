@@ -19,10 +19,11 @@ class Week2Screen extends StatelessWidget {
           ),
         ),
         centerTitle: true,
+        backgroundColor: AppColors.primary,
         iconTheme: const IconThemeData(
           color: Colors.white, 
         ),
-        backgroundColor: AppColors.week2Gradient[0],
+       
       ),
       body: Container(
         width: double.infinity,

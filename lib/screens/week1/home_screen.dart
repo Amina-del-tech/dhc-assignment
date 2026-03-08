@@ -34,7 +34,7 @@ class HomeScreen extends StatelessWidget {
         ),
         iconTheme:IconThemeData(color: Colors.white),
         centerTitle: true,
-        backgroundColor: AppColors.week1Gradient[0],
+        backgroundColor: AppColors.primary,
       ),
       body: Container(
         width: double.infinity,

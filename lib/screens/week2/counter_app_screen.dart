@@ -61,7 +61,8 @@ class _CounterAppScreenState extends State<CounterAppScreen> {
         ),
         centerTitle: true,
         iconTheme: const IconThemeData(color: Colors.white),
-        backgroundColor: AppColors.week2Gradient[0],
+        backgroundColor: AppColors.primary,
+        elevation: 0,
       ),
       body: Center(
         child: LayoutBuilder(

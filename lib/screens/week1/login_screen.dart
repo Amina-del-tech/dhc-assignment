@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:my_flutter_journey/screens/week1/forgot_password_screen.dart';
 import 'package:my_flutter_journey/screens/week1/home_screen.dart';
 import 'package:my_flutter_journey/screens/week1/signup_screen.dart';
+import 'package:my_flutter_journey/utils/app_colors.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -91,13 +92,14 @@ class _LoginScreenState extends State<LoginScreen> {
     return Scaffold(
       backgroundColor: const Color(0xffe9eef5),
       appBar: AppBar(
-        backgroundColor: const Color(0xff3f5bd8),
+        
         title: const Text("Login"),
         titleTextStyle: const TextStyle(
           fontWeight: FontWeight.bold,
           fontSize: 20,
           color: Colors.white,
         ),
+        backgroundColor: AppColors.primary,
         centerTitle: true,
         leading: IconButton(
           icon: const Icon(Icons.arrow_back),

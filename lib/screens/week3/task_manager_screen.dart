@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:my_flutter_journey/screens/models/task_model.dart';
 import 'package:my_flutter_journey/screens/widgets/task_tile.dart';
+import 'package:my_flutter_journey/utils/app_colors.dart';
 import 'package:my_flutter_journey/utils/constants.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -176,6 +177,7 @@ class _TaskManagerScreenState extends State<TaskManagerScreen> {
           fontWeight: FontWeight.bold,
           fontSize: 20,
         ),
+        backgroundColor: AppColors.primary,
         iconTheme: const IconThemeData(color: Colors.white),
         flexibleSpace: Container(
           decoration: const BoxDecoration(

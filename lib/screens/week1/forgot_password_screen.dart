@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:my_flutter_journey/utils/app_colors.dart';
 
 class ForgotPasswordScreen extends StatefulWidget {
   const ForgotPasswordScreen({super.key});
@@ -58,7 +59,8 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
           style: TextStyle(color: Colors.white),
         ),
         centerTitle: true,
-        backgroundColor: const Color(0xff3f5bd8), // Blue AppBar
+        iconTheme: IconThemeData(color: Colors.white),
+     backgroundColor: AppColors.primary,
       ),
       body:loading
           ? const Center(child: CircularProgressIndicator())

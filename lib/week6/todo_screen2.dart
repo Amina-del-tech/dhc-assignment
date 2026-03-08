@@ -190,16 +190,10 @@ class _TodoScreen2State extends State<TodoScreen2>
             const TextStyle(color: Colors.white, fontSize: 20, fontWeight: FontWeight.bold),
         centerTitle: true,
         elevation: 6,
-        flexibleSpace: Container(
-          decoration: BoxDecoration(
-            gradient: LinearGradient(
-              colors: AppColors.week6Gradient,
-              begin: Alignment.topLeft,
-              end: Alignment.bottomRight,
-            ),
-          ),
-        ),
+        backgroundColor: AppColors.primary,
       ),
+        
+        
       body: Consumer<TaskProvider>(
         builder: (context, provider, _) {
           if (provider.tasks.isEmpty) {

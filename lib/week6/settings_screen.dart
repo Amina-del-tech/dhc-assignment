@@ -51,12 +51,11 @@ class SettingsScreen extends StatelessWidget {
 
             const SizedBox(height: 16),
 
-            // Dark / Light mode toggle (example only)
             ListTile(
               leading: const Icon(Icons.brightness_6, color: Colors.orange),
               title: const Text("Toggle Dark Mode"),
               onTap: () {
-                // Toggle theme logic here (optional)
+                
                 ScaffoldMessenger.of(context).showSnackBar(
                   const SnackBar(content: Text("Theme toggled!")),
                 );
