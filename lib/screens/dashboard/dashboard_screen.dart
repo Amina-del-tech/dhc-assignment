@@ -4,7 +4,6 @@ import 'package:my_flutter_journey/screens/widgets/week_card.dart';
 import 'package:my_flutter_journey/screens/widgets/week_screens_list_dart';
 import 'package:my_flutter_journey/utils/app_colors.dart';
 
-
 class DashboardScreen extends StatelessWidget {
   const DashboardScreen({super.key});
 
@@ -108,8 +107,7 @@ class DashboardScreen extends StatelessWidget {
               subtitle:
                   "Implemented Firebase Authentication for user registration and login. Learned to integrate Firebase services into Flutter apps.",
               icon: Icons.looks_5,
-              gradientColors:
-                  AppColors.week5Gradient, 
+              gradientColors: AppColors.week5Gradient,
               margin: const EdgeInsets.only(bottom: 12),
               onTap: () => Navigator.push(
                 context,
@@ -121,8 +119,27 @@ class DashboardScreen extends StatelessWidget {
                     screens: WeekTaskData.week5Screens,
                   ),
                 ),
-              )
-            )
+              ),
+            ),
+            WeekCard(
+              title: "Week 6",
+              subtitle:
+                  "Refactored the Task Management App using Provider for efficient state management. Implemented add, delete, and update tasks with real-time UI updates. Improved app architecture and added basic UI animations.",
+              icon: Icons.looks_6,
+              gradientColors: AppColors.week6Gradient,
+              margin: const EdgeInsets.only(bottom: 12),
+              onTap: () => Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (_) => WeekScreensList(
+                    weekTitle: "Week 6",
+                    weekDescription:
+                        "Implemented Provider for state management and optimized the Task Management App with better architecture and UI animations.",
+                    screens: WeekTaskData.week6Screens,
+                  ),
+                ),
+              ),
+            ),
           ],
         ),
       ),

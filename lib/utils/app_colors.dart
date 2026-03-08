@@ -20,12 +20,30 @@ class AppColors {
   static const Color danger = Color(0xFFE53935); // red
 
   // Week Card Gradients
-  static const List<Color> week1Gradient = [Color(0xFF6FB1FC), Color(0xFF4364F7)];
-  static const List<Color> week2Gradient = [Color(0xFFFF758C), Color(0xFFFF7EB3)];
-  static const List<Color> week3Gradient = [Color(0xFF43CEA2), Color(0xFF185A9D)];
-  static const List<Color> week4Gradient = [Color(0xFFFFB75E), Color(0xFFED8F03)];
-  static const List<Color> week5Gradient = [Color(0xFF7F00FF), Color(0xFFE100FF)];
-  
+  static const List<Color> week1Gradient = [
+    Color(0xFF6FB1FC),
+    Color(0xFF4364F7),
+  ];
+  static const List<Color> week2Gradient = [
+    Color(0xFFFF758C),
+    Color(0xFFFF7EB3),
+  ];
+  static const List<Color> week3Gradient = [
+    Color(0xFF43CEA2),
+    Color(0xFF185A9D),
+  ];
+  static const List<Color> week4Gradient = [
+    Color(0xFFFFB75E),
+    Color(0xFFED8F03),
+  ];
+  static const List<Color> week5Gradient = [
+    Color(0xFF7F00FF),
+    Color(0xFFE100FF),
+  ];
+  static const List<Color> week6Gradient = [
+    Color(0xFF41AB53),
+    Color(0xFF476F9F),
+  ];
 
   // Divider / Border
   static const Color border = Color(0xFFE0E0E0);

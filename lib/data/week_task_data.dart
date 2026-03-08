@@ -6,6 +6,8 @@ import 'package:my_flutter_journey/screens/week2/todo_app_screen.dart';
 import 'package:my_flutter_journey/screens/week3/task_manager_screen.dart';
 import 'package:my_flutter_journey/week4/user_list_screen.dart';
 import 'package:my_flutter_journey/week5/profile_screen.dart';
+import 'package:my_flutter_journey/week6/task_management_screen.dart';
+import 'package:my_flutter_journey/week6/todo_screen2.dart';
 
 
 
@@ -73,6 +75,20 @@ class WeekTaskData {
     "description":
         "After login/signup, display the user profile with data fetched from Firestore. Show user's name and email. Provide a logout button to sign out from Firebase Authentication.",
     "screen":ProfileScreen(),
+  },
+];
+
+
+static final List<Map<String, dynamic>> week6Screens = [
+  {
+    "title": "Week 6 - Basic Todo",
+    "description": "Simple todo app using Provider for state management. Add and delete tasks with basic UI.",
+    "screen": const TodoScreen2(),
+  },
+  {
+    "title": "Week 6 - Task Management",
+    "description": "Advanced task manager with task completion tick, delete confirmation dialog, and animations using Provider.",
+    "screen": const TaskManagementScreen(),
   },
 ];
 }
