@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 import 'package:my_flutter_journey/provider/task_provider.dart';
 import 'package:my_flutter_journey/screens/models/task_model.dart';
 import 'package:my_flutter_journey/utils/app_colors.dart';
