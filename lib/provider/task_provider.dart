@@ -11,7 +11,7 @@ class TaskProvider with ChangeNotifier {
   bool get isDarkMode => _isDarkMode;
 
   TaskProvider() {
-    _loadDarkMode(); // App start pe load karenge
+    _loadDarkMode(); 
   }
 
   void _loadDarkMode() async {
@@ -53,7 +53,7 @@ class TaskProvider with ChangeNotifier {
     notifyListeners();
   }
 
-  // Agar aapne Task me priority/tag add kiye hain:
+  
   void addTaskWithExtras(String title, String description, String priority, String tag) {
     _tasks.add(Task(title: title, description: description, priority: priority, tag: tag));
     notifyListeners();
