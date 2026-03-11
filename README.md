@@ -19,16 +19,16 @@ This project demonstrates modern UI design, responsive layout, navigation, and b
 
 📱 Screens Included
 
- Week 1
+ # 💻Week 1
 - Login Screen  
 - Signup Screen  
 - Home Screen  
 
- Week 2
+ # 💻Week 2
 - Counter App  
 - Todo App (Local State)  
 
- Week 3
+ # 💻Week 3
 - Complete Task Manager  
 
 🛠️ Built With
@@ -38,7 +38,7 @@ This project demonstrates modern UI design, responsive layout, navigation, and b
 - Material UI  
 - Responsive Layout  
   
-Week 4 
+# 💻Week 4 
 - REST API Integration in Flutter
 
 📚 Project Overview
@@ -78,7 +78,7 @@ Packages Used
 - http – For REST API requests.
 - flutter/material.dart – UI components.
 
-Week 5 – Profile Screen with Firebase
+# 💻Week 5 – Profile Screen with Firebase
 Overview
 
 In Week 5, the focus was on implementing a Profile Screen in the Flutter application. This screen allows a logged-in user to view their personal information, including:
@@ -164,6 +164,95 @@ Explanation:
 - After signup/login, user data is stored in Firestore.
 - Profile Screen fetches data asynchronously using FutureBuilder.
 - UI updates automatically when user data is available.
+
+# Week 6 – Flutter Task Management App (Provider, Settings, Dark Mode & Animations)
+
+## Overview
+
+In **Week 6**, the Flutter Task Management application was enhanced by implementing **Provider for state management** along with additional features such as **task editing, settings screen, dark mode, and UI animations**. The goal was to build a more structured and interactive application while keeping the business logic separate from the user interface.
+
+The application allows users to **add, view, edit, and delete tasks**, as well as customize the application appearance through **dark mode settings**.
+
+## Features Implemented
+
+### Task Management
+
+Users can manage tasks with the following functionalities:
+
+* **Add Task** – Users can create new tasks by entering a title and description through a dialog form.
+* **View Task Details** – Tapping a task opens a dialog showing the full task details.
+* **Edit Task** – Existing tasks can be edited, allowing users to update the title or description.
+* **Delete Task** – Tasks can be removed with a confirmation dialog to prevent accidental deletion.
+
+### Provider State Management
+
+The application uses **Provider** to manage the state of tasks.
+
+A `TaskProvider` class extends `ChangeNotifier` and stores the task list. It includes methods for:
+
+* Adding tasks
+* Editing tasks
+* Deleting tasks
+
+Whenever the task list changes, the provider notifies the UI using **notifyListeners()**, and the UI automatically rebuilds using **Consumer widgets**.
+
+### Settings Screen
+
+A dedicated **Settings screen** was implemented to manage application preferences and customization options.
+
+### Dark Mode
+
+The app includes **Dark Mode support**, allowing users to toggle between **Light Theme and Dark Theme** from the settings screen. The theme updates dynamically across the entire application.
+
+### Animations
+
+Basic **UI animations** were implemented to improve the overall user experience and make interactions smoother.
+
+### Empty Task State
+
+When there are no tasks available, the application displays a friendly message such as **“No Tasks Yet”** with an icon and instruction to add a new task.
+
+## Project Structure
+
+The project follows a structured architecture for better scalability and maintainability:
+
+* **Models** – Defines the task data structure
+* **Providers** – Manages application state using Provider
+* **Screens** – Includes TodoScreen, SettingsScreen, SplashScreen, etc.
+* **Widgets** – Reusable components such as TaskTile
+* **Utils** – Helper classes like AppColors
+
+## Technologies Used
+
+* Flutter (Dart)
+* Provider (State Management)
+* Material UI Components
+* Theme Management (Light/Dark Mode)
+* Custom Widgets
+* UI Animations
+
+## Learning Outcomes
+
+During this week, the following concepts were practiced:
+
+* Implementing **Provider-based state management**
+* Structuring Flutter applications using models, providers, and widgets
+* Managing application-wide themes (Dark Mode)
+* Creating a **settings screen**
+* Implementing **task editing functionality**
+* Adding basic UI animations
+
+## Conclusion
+
+Week 6 focused on building a more scalable Flutter application by implementing **Provider state management**, **task editing**, **theme customization**, and **animations**. These improvements made the application more interactive, user-friendly, and maintainable.
+
+Future improvements may include:
+
+* Task completion tracking
+* Notifications and reminders
+* Cloud database integration (Firebase)
+* Advanced animations and UI improvements
+
 
 
 📂 Project Structure
